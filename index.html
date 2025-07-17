@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Queen Avanthika 👑 | Happy Birthday!</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      color: #333;
+      padding: 20px;
+      overflow-x: hidden;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-out;
+      position: relative;
+      backdrop-filter: blur(5px);
+    }
+    .scene {
+      display: none;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      background: linear-gradient(to right, #ff7f50, #ff5e62);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 25px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
+      font-weight: 600;
+    }
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 94, 98, 0.6);
+    }
+    h2 {
+      color: #ff5e62;
+      margin-top: 0;
+      font-size: 28px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      animation: float 3s ease-in-out infinite;
+      opacity: 0.7;
+      z-index: -1;
+    }
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      pointer-events: none;
+      display: none;
+    }
+    .music-note {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      z-index: 10;
+    }
+    #soundcloud-player {
+      margin: 30px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .pulse-emoji {
+      animation: pulse 1.5s infinite;
+      display: inline-block;
+      margin: 0 5px;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+        margin: 10px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 16px;
+      }
+      button {
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div id="hearts-container"></div>
+
+  <div class="container">
+    <div id="scene1" class="scene active">
+      <h2>Hey my darling 👑</h2>
+      <p>I was wondering if the sunsets are jealous yet...<br>Because you've been stealing all the glow lately 😉✨</p>
+      <button onclick="nextScene(2)">Let’s wander... →</button>
+    </div>
+
+    <div id="scene2" class="scene">
+      <h2>Sunset by the Shore 🌅</h2>
+      <p>The breeze brushes your hair. The cute smiles make me fall for you. The sunsets lost their pride when they saw you.<br><br>Somewhere between the waves and your smile, I forget the world. Life has been good lately.</p>
+      <button onclick="nextScene(3)">And then you smiled... →</button>
+    </div>
+
+    <div id="scene3" class="scene">
+      <h2>Memory Lane</h2>
+      <p>We met through Kunju, and not gonna lie she cooked !!<br><br>But within days, your name means warmth, your words feel like music and wanted the conversations to be endless.<br><br>Cutie pie... you're becoming my favorite person.</p>
+      <button onclick="nextScene(4)">Final Surprise 💝</button>
+    </div>
+
+    <div id="scene4" class="scene">
+      <h2>Happy Birthday, Avanthika! 🎂🎉</h2>
+      <p>"Happy Birthday to the one who makes my heart skip a beat every single day. Your smile is my favorite sight and your happiness is my biggest wish. May your day be as beautiful and amazing as you are."</p>
+      <p>To my beautiful cutie patootie — the one who turned every little moment into a memory and quietly became my favorite person.<br><br>Here's to more laughs, smiles, spoiled sleeps and us.</p>
+
+
+      <div style="margin: 30px 0; font-size: 24px;">
+        <span class="pulse-emoji">🎁</span>
+        <span class="pulse-emoji">🎀</span>
+        <span class="pulse-emoji">🎈</span>
+        <span class="pulse-emoji">🎊</span>
+        <span class="pulse-emoji">💐</span>
+        <span class="pulse-emoji">🎂</span>
+      </div>
+      <p style="text-align: right;"><strong>— Thejuuu 💙</strong></p>
+      <button onclick="replay()">Again, from the top 🔁</button>
+    </div>
+  </div>
+
+  <script>
+    // Scene Navigation
+    function nextScene(sceneNum) {
+      document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+      const next = document.getElementById(`scene${sceneNum}`);
+      next.classList.add('active');
+      next.scrollIntoView({ behavior: 'smooth' });
+      
+      if (sceneNum === 4) {
+        startConfetti();
+        createHearts();
+        setTimeout(() => {
+          const audio = document.getElementById('birthdayMusic');
+          if (audio) {
+            audio.play().catch(e => console.log("Autoplay blocked:", e));
+          }
+        }, 500);
+      } else {
+        stopConfetti();
+      }
+    }
+
+    function replay() {
+      stopConfetti();
+      nextScene(1);
+    }
+
+    // Floating Hearts
+    function createHearts() {
+      const heartsContainer = document.getElementById('hearts-container');
+      heartsContainer.innerHTML = '';
+      
+      const emojis = ['💖', '💘', '💝', '💗', '💓', '💞', '🌸', '🌺'];
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = Math.random() * 100 + 'vh';
+        heart.style.animationDelay = Math.random() * 3 + 's';
+        heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+        heartsContainer.appendChild(heart);
+      }
+    }
+
+    // Enhanced Confetti Effect
+    function startConfetti() {
+      const canvas = document.getElementById('confetti-canvas');
+      canvas.style.display = 'block';
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const confettiPieces = [];
+      const colors = ['#ff5e62', '#ff9966', '#ffcc33', '#ff99cc', '#66ccff', '#5effa0'];
+
+      class Confetti {
+        constructor() {
+          this.reset();
+          this.y = Math.random() * canvas.height;
+        }
+        
+        reset() {
+          this.x = Math.random() * canvas.width;
+          this.y = -10;
+          this.size = Math.random() * 12 + 5;
+          this.color = colors[Math.floor(Math.random() * colors.length)];
+          this.speed = Math.random() * 3 + 2;
+          this.angle = Math.random() * 6.28;
+          this.spin = Math.random() * 0.2 - 0.1;
+          this.shape = Math.random() > 0.5 ? 'square' : 'circle';
+          this.wobble = Math.random() * 2;
+          this.wobbleSpeed = Math.random() * 0.02 + 0.01;
+          this.wobbleOffset = Math.random() * 10;
+        }
+
+        update() {
+          this.y += this.speed;
+          this.angle += this.spin;
+          this.wobbleOffset += this.wobbleSpeed;
+          this.x += Math.sin(this.wobbleOffset) * this.wobble;
+          
+          if (this.y > canvas.height) {
+            this.reset();
+            this.y = -10;
+          }
+        }
+
+        draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.angle);
+          ctx.fillStyle = this.color;
+          
+          if (this.shape === 'circle') {
+            ctx.beginPath();
+            ctx.arc(0, 0, this.size/2, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+          }
+          
+          ctx.restore();
+        }
+      }
+
+      for (let i = 0; i < 200; i++) {
+        confettiPieces.push(new Confetti());
+      }
+
+      let lastTime = 0;
+      const fps = 60;
+      const interval = 1000/fps;
+
+      function animate(timestamp) {
+        if (!lastTime) lastTime = timestamp;
+        const delta = timestamp - lastTime;
+        
+        if (delta >= interval) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          confettiPieces.forEach(piece => {
+            piece.update();
+            piece.draw();
+          });
+          lastTime = timestamp - (delta % interval);
+        }
+        
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    function stopConfetti() {
+      const canvas = document.getElementById('confetti-canvas');
+      canvas.style.display = 'none';
+    }
+
+    // Initialize
+    createHearts();
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      const canvas = document.getElementById('confetti-canvas');
+      if (canvas.style.display === 'block') {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    });
+
+    // Music control
+    document.addEventListener('click', function() {
+      try {
+        const iframe = document.querySelector('#soundcloud-player iframe');
+        if (iframe) {
+          iframe.contentWindow.postMessage('{"method":"play"}', '*');
+        }
+      } catch(e) {
+        console.log("Couldn't play music:", e);
+      }
+    }, { once: true });
+  
+    // Music control on first click (for iOS autoplay)
+    document.addEventListener('click', function() {
+      const audio = document.getElementById('birthdayMusic');
+      if (audio) audio.play().catch(e => console.log("User gesture required to play audio."));
+    }, { once: true });
+</script>
+
+<audio id="birthdayMusic" src="100 Days Of Love.mp3" preload="auto" loop></audio>
+</body>
+</html>
